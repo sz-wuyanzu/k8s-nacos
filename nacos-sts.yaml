@@ -1,5 +1,3 @@
-kubectl create ns nacos
-#cat nacos.yaml
 
 ---
 kind: StatefulSet
