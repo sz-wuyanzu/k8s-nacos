@@ -1,0 +1,16 @@
+version: "3"
+services:
+  mysql:
+    restart: always
+    container_name: mysql
+    image: 'nacos/nacos-mysql:5.7' #使用的镜像
+    restart: always
+    volumes:
+      - ${PWD}/mysql/mysql:/var/lib/mysql  #挂载目录，持久化存储
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - '3306:3306'
+    environment:
+      TZ: Asia/Shanghai
+      MYSQL_ROOT_PASSWORD: ******   #设置root用户的密码
+    user: root
